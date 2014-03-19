@@ -1,0 +1,18 @@
+#Length Conversion Program
+#Asks for user input
+MeasurementT = input("Do you want to convert miles or yards? ")
+
+
+#Asks for value input
+if MeasurementT == "yards" or "Yards":
+    Measurement = input("Enter the number of yards: ")
+    Measurement2 = float(Measurement)
+    print("The number of miles will be: ", Measurement2 / 1/1760, "miles")
+
+
+#Calculates measurements
+elif MeasurementT == "miles" or "Miles":
+    Measurement3 = input("Enter the number of miles: ")
+    Measurement4 = float(Measurement3)
+    print("The number of yards will be: ", Measurement4 * 1/1760, "miles")
+
