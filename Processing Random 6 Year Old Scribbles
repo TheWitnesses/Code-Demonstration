@@ -5,7 +5,7 @@ float y;
 
 void setup()
 {
-  size(640, 480); // setting up the size
+  size(600, 600); // setting up the size
   smooth();
   
   pg = createGraphics(64, 64, JAVA2D); // this is setting up the 2D screen
@@ -22,7 +22,7 @@ void draw()
   pg.beginDraw();
   pg.background(128, 128, 10, 15);
   pg.smooth(); // smoothing out the createGraphics
-  for (int i= 0; i < 10; i++) { // iteration starts at 0, loops 9 times
+  for (int i = 0; i < 10; i++) { // iteration starts at 0, loops 9 times
     pg.stroke(random(255), random(255), random(255)); 
     pg.line(random(pg.width), random(pg.height), random(pg.width), random(pg.height)); // makes the whole thing look like scribbles
   }
@@ -45,7 +45,7 @@ void draw()
 
 void mousePressed()
 {
-  if (random(100) < 50) { // changes background to white, does not always alternate, deliberate
+  if (random(100) < 70) { // changes background to white, does not always alternate, deliberate
     background(0); 
   } else {
     background(255); // changes background to black
