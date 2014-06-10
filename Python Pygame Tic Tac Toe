@@ -5,19 +5,19 @@ from pygame.locals import *
 # Starts the game
 pygame.init()
 
-# Set up variables we need
+# Set up variables computer needs for the game
 # =========================
 # set up game over variable
 GameOver = False
 Winner = False
 
-#Create board table
+# Creates board table
 UnusedBoxes = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-#Keeps track of status of the game
+# Keeps track of status of the game
 MainBoard = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-#I am setting up the window
+# Sets up the game window and defines colors
 DISPLAYSURF = pygame.display.set_mode((864, 720))
 pygame.display.set_caption('Tic Tac Toe WIP')
 WHITE = (255, 255, 255)
@@ -95,7 +95,7 @@ def RemoveChoice(val):
     del UnusedBoxes[boxindex]
     return
 
-#Places X, hides number, deletes from list, puts x on board
+# Places X, hides number, deletes from list, puts x on board
 def PlaceX():
     boxindex = -1
             
@@ -216,38 +216,38 @@ def PlaceO():
 
 #===========================================================
 
-#Fonts
+# Fonts
 fontObj = pygame.font.Font('freesansbold.ttf', 50)
 fontObj48 = pygame.font.Font('freesansbold.ttf', 26)
 fontObj150 = pygame.font.Font('freesansbold.ttf', 150)
 
 
-#Font object X
+# Font for object X
 textSurfaceObjX150 = fontObj150.render('X', True, RED)
 textRectObjX150 = textSurfaceObjX150.get_rect()
 textRectObjX150.center = (432, 360)
 
 
-#Font object O
+# Font for object O
 textSurfaceObjO150 = fontObj150.render('O', True, RED)
 textRectObjO150 = textSurfaceObjO150.get_rect()
 textRectObjO150.center = (648, 144)
 
-#Font object 1
+# Font object 1
 textSurfaceObj1 = fontObj.render('1', False, GRAY)
 textSurfaceObj1b = fontObj.render('1', False, BLACK)
 textRectObj1 = textSurfaceObj1.get_rect()
 textRectObj1.center = (216, 144)
 
 
-#Font object 2
+# Font object 2
 textSurfaceObj2 = fontObj.render('2', False, GRAY)
 textSurfaceObj2b = fontObj.render('2', False, BLACK)
 textRectObj2 = textSurfaceObj2.get_rect()
 textRectObj2.center = (432, 144)
 
 
-#Font object 3
+# Font object 3
 textSurfaceObj3 = fontObj.render('3', False, GRAY)
 textSurfaceObj3b = fontObj.render('3', False, BLACK)
 textRectObj3 = textSurfaceObj3.get_rect()
@@ -260,58 +260,58 @@ textRectObj4 = textSurfaceObj4.get_rect()
 textRectObj4.center = (216, 360)
 
 
-#Font object 5
+# Font object 5
 textSurfaceObj5 = fontObj.render('5', False, GRAY)
 textSurfaceObj5b = fontObj.render('5', False, BLACK)
 textRectObj5 = textSurfaceObj5.get_rect()
 textRectObj5.center = (432, 360)
 
 
-#Font object 6
+# Font object 6
 textSurfaceObj6 = fontObj.render('6', False, GRAY)
 textSurfaceObj6b = fontObj.render('6', False, BLACK)
 textRectObj6 = textSurfaceObj6.get_rect()
 textRectObj6.center = (648, 360)
 
-#Font object 7
+# Font object 7
 textSurfaceObj7 = fontObj.render('7', False, GRAY)
 textSurfaceObj7b = fontObj.render('7', False, BLACK)
 textRectObj7 = textSurfaceObj7.get_rect()
 textRectObj7.center = (216, 576)
 
-#Font object 8
+# Font object 8
 textSurfaceObj8 = fontObj.render('8', False, GRAY)
 textSurfaceObj8b = fontObj.render('8', False, BLACK)
 textRectObj8 = textSurfaceObj8.get_rect()
 textRectObj8.center = (432, 576)
 
-#Font object 9
+# Font object 9
 textSurfaceObj9 = fontObj.render('9', False, GRAY)
 textSurfaceObj9b = fontObj.render('9', False, BLACK)
 textRectObj9 = textSurfaceObj9.get_rect()
 textRectObj9.center = (648, 576)
 
-#Get User Input
+# Get User Input
 textSurfaceObjPlayerChoice = fontObj48.render('Where do you want your X? Pick a number between 1 and 9', False, ORANGE)
 textSurfaceObjPlayerChoiceb = fontObj48.render('Where do you want your X? Pick a number between 1 and 9', False, BLACK)
 textRectPlayerChoice = textSurfaceObjPlayerChoice.get_rect()
 textRectPlayerChoice.center = (432, 684)
 
-#Hides User Input
+# Hides User Input
 #textSurfaceObjPlayerChoiceb = fontObj48.render('Where do you want your X? Pick a number between 1 and 9', False, RED)
 #textRectPlayerChoiceb = textSurfaceObjPlayerChoiceb.get_rect()
 
-#Declares Winner for X
+# Declares Winner for X
 textSurfaceObjWinnerX = fontObj48.render('X Wins!', True, BLUE)
 textRectWinnerX = textSurfaceObjWinnerX.get_rect()
 textRectWinnerX.center = (432, 684)
 
-#Declares Winner for O
+# Declares Winner for O
 textSurfaceObjWinnerO= fontObj48.render('O Wins!', True, BLUE)
 textRectWinnerO = textSurfaceObjWinnerO.get_rect()
 textRectWinnerO.center = (432, 684)
 
-#Declares Draw
+# Declares Draw
 textSurfaceObjDraw= fontObj48.render('No Winner!', True, BLUE)
 textRectDraw = textSurfaceObjDraw.get_rect()
 textRectDraw.center = (432, 684)
@@ -350,8 +350,8 @@ while True:
            
 
     #====================================================================================                
-                #get input for x
-                #convert input to integer
+                # get input for x
+                # converts user input to integer
                 
 
                     if event.key == K_1:
@@ -396,7 +396,7 @@ while True:
     if ValidX:
             
 #===========================================================================================
-            #place x on board
+            # places x on board
 
             PlaceX()
             #===================================================================
@@ -412,7 +412,7 @@ while True:
                     pygame.quit()
                     sys.exit()
                         
-            #See if it is a draw            
+            # Program checks for a draw            
             if len(UnusedBoxes) == 0:
                 if not Winner:
                     DISPLAYSURF.blit(textSurfaceObjPlayerChoiceb, textRectPlayerChoice)
@@ -428,18 +428,18 @@ while True:
 
             
             #==============================================================================
-            #Its O turn to choose something
+            # O gets a turn to decide
             pygame.display.update()
             time.sleep(1)
             choice = random.choice(UnusedBoxes)
             
             #=====================================================
-            #Draw O on board
+            # Draws O on board
 
             PlaceO()
 
             #================
-                #check if O has won               
+            # checks to see if O has won               
             GameOver = CheckWin("O")
                        
 
@@ -450,7 +450,7 @@ while True:
                     sys.exit()               
 
             
-    #Write to the main screen        
+    # Writes to the main screen        
     pygame.display.update()
 
     #============================================================
